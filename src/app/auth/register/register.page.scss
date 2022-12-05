@@ -1,0 +1,26 @@
+.register {
+  align-content: center;
+  background: transparent;
+  width: 85%;
+  max-width: 400px;
+  margin: 65px auto;
+  padding: 5px;
+  border-radius: 10px;
+  //box-shadow: 0 2px 25px rgba(91, 91, 91, 0.214);
+}
+
+// body {
+//   background: rgb(255, 251, 217);
+// }
+
+ion-content {
+  --background: url("https://ifoodreal.com/wp-content/uploads/2021/11/healthy-hot-chocolate-recipe-8-683x1024.jpg")
+    no-repeat center/cover fixed;
+}
+
+@media (min-width: 500px) {
+  ion-content {
+    --background: url("https://wallpapershome.com/images/pages/pic_h/17097.jpg")
+      no-repeat center/cover fixed;
+  }
+}

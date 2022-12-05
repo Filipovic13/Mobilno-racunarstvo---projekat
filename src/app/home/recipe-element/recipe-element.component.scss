@@ -1,0 +1,33 @@
+ion-card {
+  // ion-label {
+  //   margin-left: 3em;
+  // }
+
+  #col1 {
+    text-align: center;
+    align-content: center;
+    align-self: center;
+  }
+
+  img {
+    align-content: center;
+    align-self: center;
+    border-radius: 33px;
+  }
+
+  #col3 {
+    text-align: center;
+    align-content: center;
+    align-self: center;
+  }
+
+  #col3 .ion-item {
+    max-width: 1px;
+  }
+}
+
+@media only screen and (max-width: 6000px) {
+  ion-card {
+    max-width: 900px;
+  }
+}

@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ title }} </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onAddRecipe()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Name of a recipe</ion-label>
+            <ion-input
+              type="text"
+              ngModel
+              name="recipeName"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="floating">Ingred.</ion-label>
+            <ion-input
+              type="number"
+              ngModel
+              name="numOfIngred"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="floating">Serv.</ion-label>
+            <ion-input
+              type="number"
+              ngModel
+              name="numOfServ"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="floating">Cal.</ion-label>
+            <ion-input
+              type="number"
+              ngModel
+              name="numOfCal"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Details</ion-label>
+            <ion-textarea type="text" rows="6" ngModel name="details" required>
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Url image</ion-label>
+            <ion-input type="text" ngModel name="imageUrl"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-button
+            expand="block"
+            fill="solid"
+            shape="round"
+            type="submit"
+            color="secondary"
+            [disabled]="f.invalid"
+          >
+            Add new recipe
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+    <div class="log-in">
+      <form #logInForm="ngForm" (ngSubmit)="onLogIn(logInForm)">
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            type="Email"
+            ngModel
+            name="email"
+            #email="ngModel"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="email.invalid && email.touched">
+          <ion-label>Invalid email adress</ion-label>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            type="password"
+            ngModel
+            name="password"
+            required
+            #password="ngModel"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item
+          lines="none"
+          *ngIf="password.invalid && password.touched"
+          required
+          minlength="7"
+        >
+          <ion-label>Password shoul have at least 7 characters </ion-label>
+        </ion-item>
+
+        <div class="ion-text-center">
+          <ion-spinner *ngIf="isLoading"></ion-spinner>
+        </div>
+
+        <ion-row>
+          <ion-col>
+            <ion-button
+              type="submit"
+              color="secondary"
+              expand="block"
+              shape="round"
+              [disabled]="logInForm.invalid"
+              *ngIf="!isLoading"
+              >Log In</ion-button
+            >
+          </ion-col>
+        </ion-row>
+        <ion-row class="link">
+          <p>
+            Don't have an account?
+            <a routerLink="/register"> Create one now</a>
+          </p>
+        </ion-row>
+      </form>
+    </div>
+  </body>
+</ion-content>

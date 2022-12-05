@@ -1,0 +1,18 @@
+<ion-card [routerLink]="recipe.id">
+  <ion-grid id="grid">
+    <ion-row>
+      <ion-col size="9" [routerLink]="recipe.id" id="col1">
+        <ion-label [routerLink]="recipe.id">{{ recipe.recipeName }}</ion-label>
+        <ion-card-content>
+          <img [src]="recipe.imageUrl" />
+        </ion-card-content>
+      </ion-col>
+
+      <ion-col size="3" id="col3">
+        <ion-button color="primary" (click)="openAlert($event)">
+          <ion-icon name="star" color="light"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

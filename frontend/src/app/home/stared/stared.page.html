@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Stared recipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    placeholder="Search"
+    [(ngModel)]="searchTerm"
+    showCancelButton="focus"
+    animated
+  >
+  </ion-searchbar>
+  <ion-list>
+    <app-stared-element
+      *ngFor="let recipe of starredRecipes | filter:searchTerm"
+      [recipe]="recipe"
+    ></app-stared-element>
+  </ion-list>
+</ion-content>
